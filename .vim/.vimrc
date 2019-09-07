@@ -60,6 +60,25 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
+" Set line numbers 
 set number
+
+" Set backup dir in vimtmp
 set backupdir=~/vimtmp//,.
 set directory=~/vimtmp//,.
+
+" Set path for plugins 
+set runtimepath^=~/dotfiles/.vim/bundle/
+
+" Set Pathogen plugin manager
+execute pathogen#infect()
+
+" Set Lightline plugin 
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ }
+
+" Set indent guides plugin
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
