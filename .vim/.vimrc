@@ -22,9 +22,15 @@ if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
   set backup		" keep a backup file (restore to previous version)
-  if has('persistent_undo')
-    set undofile	" keep an undo file (undo changes after closing)
+  " Let's save undo info!
+  if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
   endif
+  if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+  endif
+  set undodir=~/.vim/undo-dir
+  set undofile
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -60,8 +66,32 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
+" Set colorscheme
+colorscheme desert
+set background=dark
+
 " Set line numbers 
 set number
+
+" Set incsearch and ctrl+l to clear highlighting
+set incsearch
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+" change highlight search color
+hi Search cterm=NONE ctermfg=Black ctermbg=DarkMagenta
+hi IncSearch cterm=underline,bold ctermfg=White ctermbg=DarkMagenta
+
+" Set scrolloff, sidescrolloff and display as much as possible of the last
+" line of the window
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+set display+=lastline
 
 " Set backup dir in vimtmp
 set backupdir=~/vimtmp//,.
@@ -79,6 +109,11 @@ let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ }
 
-" Set indent guides plugin
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size = 1
+" set tabstop and shiftwidth to 2 and enable expandtab
+set ts=2 sw=2 et
+
+" set indent guide for tabs
+:set list lcs=tab:\|\  
+  
+" set indentLine plugin  
+let g:indentLine_char = '|'
