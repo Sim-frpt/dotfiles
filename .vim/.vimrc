@@ -94,11 +94,11 @@ endif
 set display+=lastline
 
 " Set backup dir in vimtmp
-set backupdir=~/vimtmp//,.
-set directory=~/vimtmp//,.
+set backupdir=~/.vim/vimtmp//,.
+set directory=~/.vim/vimtmp//,.
 
 " Set path for plugins 
-set runtimepath^=~/dotfiles/.vim/bundle/
+set runtimepath^=~/.vim/bundle/
 
 " Set Pathogen plugin manager
 execute pathogen#infect()
@@ -117,3 +117,4 @@ set ts=2 sw=2 et
   
 " set indentLine plugin  
 let g:indentLine_char = '|'
+
