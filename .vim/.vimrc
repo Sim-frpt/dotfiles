@@ -29,7 +29,7 @@ else
   if !isdirectory($HOME."/.vim/undo-dir")
     call mkdir($HOME."/.vim/undo-dir", "", 0700)
   endif
-  set undodir=~/.vim/undo-dir
+  set undodir=~/.vim/undo-dir 
   set undofile
 endif
 
@@ -66,8 +66,11 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
+" Change viminfo location
+set viminfo+=n~/.vim/viminfo
+
 " Set colorscheme
-colorscheme desert
+colorscheme gruvbox
 set background=dark
 
 " Set line numbers 
@@ -118,3 +121,5 @@ set ts=2 sw=2 et
 " set indentLine plugin  
 let g:indentLine_char = '|'
 
+" Add Tmux Color Compatibility
+set term=screen-256color
