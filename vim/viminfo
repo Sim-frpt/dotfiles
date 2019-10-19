@@ -21,17 +21,17 @@ $vim
 
 # Command Line History (newest to oldest):
 :q
-|2,0,1571486554,,"q"
+|2,0,1571486996,,"q"
+:w
+|2,0,1571486985,,"w"
 :wq
-|2,0,1571486119,,"wq"
+|2,0,1571486887,,"wq"
 :%s/.vim/vim/gc
 |2,0,1571486084,,"%s/.vim/vim/gc"
 :s/.vim/vim/g
 |2,0,1571485415,,"s/.vim/vim/g"
 :q:q
 |2,0,1571484909,,"q:q"
-:w
-|2,0,1571433583,,"w"
 :tabnew +3buf
 |2,0,1571433466,,"tabnew +3buf"
 :ls
@@ -233,7 +233,14 @@ $vim
 	        losses++;
 	        break;
 |3,0,0,1,7,0,1571432265,"    switch ( value ) {","      case 'win':","        wins++;","        break;","      case 'loss':","        losses++;","        break;"
-"1	BLOCK	0
+""1	BLOCK	0
+	.
+	.
+	.
+	
+	.
+|3,1,1,2,5,0,1571486983,".",".",".","","."
+"2	BLOCK	0
 	 
 	 
 	
@@ -244,63 +251,90 @@ $vim
 	 
 	 
 	 
-|3,0,1,2,10,0,1571433104," "," ",""," "," "," "," "," "," "," "
-"2	LINE	0
-	
-|3,0,2,1,1,0,1571432982,""
+|3,0,2,2,10,0,1571433104," "," ",""," "," "," "," "," "," "," "
 "3	LINE	0
-	  for ( let i = 0; i < 5; i++ ) {
-|3,0,3,1,1,0,1571432248,"  for ( let i = 0; i < 5; i++ ) {"
+	
+|3,0,3,1,1,0,1571432982,""
 "4	LINE	0
-	  console.log( finalResult );
-|3,0,4,1,1,0,1571431838,"  console.log( finalResult );"
+	  for ( let i = 0; i < 5; i++ ) {
+|3,0,4,1,1,0,1571432248,"  for ( let i = 0; i < 5; i++ ) {"
 "5	LINE	0
+	  console.log( finalResult );
+|3,0,5,1,1,0,1571431838,"  console.log( finalResult );"
+"6	LINE	0
 	    
 	  }
-|3,0,5,1,2,0,1571431004,"    ","  }"
-"6	LINE	0
-	  if ( wins > losses ) {
-|3,0,6,1,1,0,1571431002,"  if ( wins > losses ) {"
+|3,0,6,1,2,0,1571431004,"    ","  }"
 "7	LINE	0
-	const game = ( player, cpu ) => {
-|3,0,7,1,1,0,1571425125,"const game = ( player, cpu ) => {"
+	  if ( wins > losses ) {
+|3,0,7,1,1,0,1571431002,"  if ( wins > losses ) {"
 "8	LINE	0
-	console.log( playRound( playerSelection(), computerPlay() ) ); 
-|3,0,8,1,1,0,1571425047,"console.log( playRound( playerSelection(), computerPlay() ) ); "
+	const game = ( player, cpu ) => {
+|3,0,8,1,1,0,1571425125,"const game = ( player, cpu ) => {"
 "9	LINE	0
-	
-|3,0,9,1,1,0,1571425015,""
-""-	CHAR	0
+	console.log( playRound( playerSelection(), computerPlay() ) ); 
+|3,0,9,1,1,0,1571425047,"console.log( playRound( playerSelection(), computerPlay() ) ); "
+"-	CHAR	0
 	=
-|3,1,36,0,1,0,1571433581,"="
+|3,0,36,0,1,0,1571433581,"="
 
 # File marks:
-'0  7  0  ~/.dotfiles/.git/config
-|4,48,7,0,1571486554,"~/.dotfiles/.git/config"
-'1  39  0  ~/.dotfiles/.git/config
-|4,49,39,0,1571486248,"~/.dotfiles/.git/config"
-'2  39  0  ~/.dotfiles/.git/config
-|4,50,39,0,1571486248,"~/.dotfiles/.git/config"
-'3  29  0  ~/.dotfiles/.gitmodules
-|4,51,29,0,1571486215,"~/.dotfiles/.gitmodules"
+'0  1  0  ~/.dotfiles/.gitignore
+|4,48,1,0,1571486996,"~/.dotfiles/.gitignore"
+'1  9  14  ~/.dotfiles/tmux/.tmux.conf
+|4,49,9,14,1571486887,"~/.dotfiles/tmux/.tmux.conf"
+'2  7  0  ~/.dotfiles/.git/config
+|4,50,7,0,1571486554,"~/.dotfiles/.git/config"
+'3  39  0  ~/.dotfiles/.git/config
+|4,51,39,0,1571486248,"~/.dotfiles/.git/config"
 '4  39  0  ~/.dotfiles/.git/config
-|4,52,39,0,1571486119,"~/.dotfiles/.git/config"
-'5  39  0  ~/.dotfiles/.git/config
-|4,53,39,0,1571486119,"~/.dotfiles/.git/config"
-'6  29  0  ~/.dotfiles/.gitmodules
-|4,54,29,0,1571485566,"~/.dotfiles/.gitmodules"
-'7  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,55,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
-'8  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,56,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
-'9  149  13  ~/.vimrc
-|4,57,149,13,1571485103,"~/.vimrc"
+|4,52,39,0,1571486248,"~/.dotfiles/.git/config"
+'5  29  0  ~/.dotfiles/.gitmodules
+|4,53,29,0,1571486215,"~/.dotfiles/.gitmodules"
+'6  39  0  ~/.dotfiles/.git/config
+|4,54,39,0,1571486119,"~/.dotfiles/.git/config"
+'7  39  0  ~/.dotfiles/.git/config
+|4,55,39,0,1571486119,"~/.dotfiles/.git/config"
+'8  29  0  ~/.dotfiles/.gitmodules
+|4,56,29,0,1571485566,"~/.dotfiles/.gitmodules"
+'9  1  0  ~/.dotfiles/tmux/.tmux.conf
+|4,57,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
 
 # Jumplist (newest first):
+-'  1  0  ~/.dotfiles/.gitignore
+|4,39,1,0,1571486996,"~/.dotfiles/.gitignore"
+-'  2  11  ~/.dotfiles/.gitignore
+|4,39,2,11,1571486970,"~/.dotfiles/.gitignore"
+-'  9  14  ~/.dotfiles/tmux/.tmux.conf
+|4,39,9,14,1571486887,"~/.dotfiles/tmux/.tmux.conf"
+-'  9  14  ~/.dotfiles/tmux/.tmux.conf
+|4,39,9,14,1571486887,"~/.dotfiles/tmux/.tmux.conf"
+-'  1  0  ~/.dotfiles/tmux/.tmux.conf
+|4,39,1,0,1571486857,"~/.dotfiles/tmux/.tmux.conf"
+-'  1  0  ~/.dotfiles/tmux/.tmux.conf
+|4,39,1,0,1571486857,"~/.dotfiles/tmux/.tmux.conf"
+-'  7  0  ~/.dotfiles/.git/config
+|4,39,7,0,1571486554,"~/.dotfiles/.git/config"
+-'  7  0  ~/.dotfiles/.git/config
+|4,39,7,0,1571486554,"~/.dotfiles/.git/config"
+-'  7  0  ~/.dotfiles/.git/config
+|4,39,7,0,1571486554,"~/.dotfiles/.git/config"
 -'  7  0  ~/.dotfiles/.git/config
 |4,39,7,0,1571486554,"~/.dotfiles/.git/config"
 -'  39  0  ~/.dotfiles/.git/config
 |4,39,39,0,1571486537,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486537,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486537,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486537,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486248,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486248,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486248,"~/.dotfiles/.git/config"
 -'  39  0  ~/.dotfiles/.git/config
 |4,39,39,0,1571486248,"~/.dotfiles/.git/config"
 -'  29  0  ~/.dotfiles/.gitmodules
@@ -311,6 +345,42 @@ $vim
 |4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
 -'  29  0  ~/.dotfiles/.gitmodules
 |4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571486215,"~/.dotfiles/.gitmodules"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486119,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486119,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486119,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486119,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486119,"~/.dotfiles/.git/config"
+-'  39  0  ~/.dotfiles/.git/config
+|4,39,39,0,1571486119,"~/.dotfiles/.git/config"
 -'  39  0  ~/.dotfiles/.git/config
 |4,39,39,0,1571486119,"~/.dotfiles/.git/config"
 -'  39  0  ~/.dotfiles/.git/config
@@ -323,6 +393,78 @@ $vim
 |4,39,1,0,1571486084,"~/.dotfiles/.git/config"
 -'  1  0  ~/.dotfiles/.git/config
 |4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  1  0  ~/.dotfiles/.git/config
+|4,39,1,0,1571486084,"~/.dotfiles/.git/config"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
+-'  29  0  ~/.dotfiles/.gitmodules
+|4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
 -'  29  0  ~/.dotfiles/.gitmodules
 |4,39,29,0,1571485566,"~/.dotfiles/.gitmodules"
 -'  29  0  ~/.dotfiles/.gitmodules
@@ -359,146 +501,27 @@ $vim
 |4,39,1,0,1571485522,"~/.dotfiles/.gitmodules"
 -'  1  0  ~/.dotfiles/.gitmodules
 |4,39,1,0,1571485522,"~/.dotfiles/.gitmodules"
--'  1  0  ~/.dotfiles/.gitmodules
-|4,39,1,0,1571485522,"~/.dotfiles/.gitmodules"
--'  1  0  ~/.dotfiles/.gitmodules
-|4,39,1,0,1571485522,"~/.dotfiles/.gitmodules"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  1  0  ~/.dotfiles/tmux/.tmux.conf
-|4,39,1,0,1571485143,"~/.dotfiles/tmux/.tmux.conf"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
--'  149  13  ~/.vimrc
-|4,39,149,13,1571485103,"~/.vimrc"
 
 # History of marks within files (newest to oldest):
+
+> ~/.dotfiles/.gitignore
+	*	1571486985	0
+	"	1	0
+	^	5	17
+	.	1	0
+	+	3	7
+	+	2	10
+	+	3	12
+	+	5	16
+	+	2	11
+	+	1	0
+
+> ~/.dotfiles/tmux/.tmux.conf
+	*	1571486881	0
+	"	9	14
+	^	9	15
+	.	9	14
+	+	9	14
 
 > ~/.dotfiles/.git/config
 	*	1571486553	0
@@ -539,10 +562,6 @@ $vim
 	+	26	0
 	+	28	0
 	+	29	0
-
-> ~/.dotfiles/tmux/.tmux.conf
-	*	1571485143	0
-	"	1	0
 
 > ~/.vimrc
 	*	1571485099	0
@@ -1027,17 +1046,6 @@ $vim
 	^	41	5
 	.	41	11
 	+	41	11
-
-> ~/.dotfiles/.gitignore
-	*	1569778432	0
-	"	2	11
-	^	5	17
-	.	2	11
-	+	3	7
-	+	2	10
-	+	3	12
-	+	5	16
-	+	2	11
 
 > /etc/zsh/zshenv
 	*	1569777999	0
