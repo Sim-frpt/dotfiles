@@ -1,0 +1,119 @@
+const computerPlay = () => {
+  let choices = ['rock', 'paper', 'scissors' ];
+  let randomNumber = Math.floor( Math.random() * 3 );
+
+  return choices[randomNumber];
+};
+
+const playRound = ( playerSelection, computerSelection ) => {
+
+  console.log( `your choice was ${playerSelection}.` );
+  console.log( `the computer's choice  was ${computerSelection}.` );
+
+  switch ( playerSelection ) {
+
+    case 'rock': 
+      if ( computerSelection === 'rock' ) {
+
+        return 'draw';
+      } else if ( computerSelection === 'paper' ) {
+
+        return 'loss';
+      } else {
+
+        return 'win';
+      }
+
+      break;
+    case 'paper':
+      if ( computerSelection === 'rock' ) {
+
+        return 'win';
+      } else if ( computerSelection === 'paper' ) {
+
+        return 'draw';
+      } else {
+
+        return 'loss';
+      }
+      break;
+    case 'scissors':
+      if ( computerSelection === 'rock' ) {
+
+        return 'loss';
+      } else if ( computerSelection === 'paper' ) {
+
+        return 'win';
+      } else {
+
+        return 'draw';
+      }
+      break;
+  }
+};
+
+const playerSelection = () => {
+  let input       = window.prompt( 'Welcome to the game, please choose rock, paper or scissors!' );
+  input           = input.toLowerCase();
+  possibleChoices = ['rock', 'paper', 'scissors'];
+
+  if ( ! possibleChoices.includes( input ) ) {
+    window.alert( 'please make a choice between the propositions' );
+    return  playerSelection();
+  }
+
+  return input.toLowerCase();
+};
+
+const game = () => {
+  let wins = 0;
+  let losses = 0;
+  //let draws = 0;
+  
+  while ( wins <= 3 && losses <= 3 ) {
+    let value = playRound( playerSelection(), computerPlay() );  
+    switch ( value ) {
+      case 'win':
+        wins++;
+        break;
+      case 'loss':
+        losses++;
+        break;
+    }
+  }
+  
+  if ( wins > losses ) {
+    return `You\'ve won ! ${wins} wins  for you against ${losses} for the computer.`;
+  } else {
+    return 'You\'ve lost! Computer has ' + losses + ' wins';
+    }
+  }
+  //for ( let i = 0; i < 5; i++ ) {
+    //let value = playRound( playerSelection(), computerPlay() );  
+    //console.log( value );
+    //switch ( value ) {
+      //case 'win':
+        //wins++;
+        //break;
+      //case 'loss':
+        //losses++;
+        //break;
+      //case 'draw':
+        //draws++;
+        //break;
+    //}
+  //}
+  
+  //let results = [ wins, losses, draws ];
+  //let highscore = 0;
+
+  //results.forEach( result => {
+    //highscore = result > highscore ? result : highscore; 
+  //});
+  //console.log( wins );
+  //console.log( losses );
+  //console.log( draws );
+  //console.log( highscore );
+//}
+
+console.log(game());

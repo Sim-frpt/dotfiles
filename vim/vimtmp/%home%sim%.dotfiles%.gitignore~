@@ -1,0 +1,5 @@
+.vim/undo-dir/*
+.vim/viminfo/*
+.vim/vimtmp/*
+
+.zsh/.zsh_history

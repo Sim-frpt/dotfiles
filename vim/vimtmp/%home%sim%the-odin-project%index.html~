@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    let add7 = number => number + 7;
+
+    let multiply = function ( a, b ) {
+      return a * b;
+    }
+
+    function capitalize(string) {
+      return string.charAt(0).toUpperCase() + string.substring(1);
+    }
+
+    function lastLetter( string ) {
+      return string.charAt(string[string.length - 1]);
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
