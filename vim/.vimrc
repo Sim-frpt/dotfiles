@@ -79,13 +79,11 @@ set background=dark
 " Set line numbers 
 set number
 
-  " Set i.ncsearch and ctrl+l to clear highlighting
+" Set incsearch 
 set incsearch
 
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-endif
+" Use <esc> to clear the highlighting of :set hlsearch.
+:nnoremap <esc> :noh<return><esc>
 
 " change highlight search color
 hi Search cterm=NONE ctermfg=Black ctermbg=DarkMagenta
@@ -111,11 +109,11 @@ set runtimepath^=~/.vim/bundle/
 " Set Pathogen plugin manager
 execute pathogen#infect()
 
-" Set Lightline plugin 
+" Set Lightline plugin
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
-      \ }
+    \ 'colorscheme': 'seoul256',
+    \ }
 
 " set tabstop and shiftwidth to 2 and enable expandtab
 set ts=2 sw=2 et
@@ -126,9 +124,6 @@ set ts=2 sw=2 et
 " set indentLine plugin  
 let g:indentLine_char = '|'
 
-" Remap Emmet trigger
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
 " Add Tmux Color Compatibility
 set term=screen-256color
 
@@ -137,7 +132,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 " Autoclosing brackets
-inoremap { {<CR>}<Esc>ko
+inoremap { {}<left>
 
 " Remap <C-w>
 :nnoremap <Leader>w <C-w>
@@ -147,4 +142,12 @@ nmap <Leader>t :NERDTreeToggle<CR>
 
 " Remove annoying *BEEEP*
 set visualbell
+
+" remove wrapping
+:set textwidth=0 
+:set wrapmargin=0
+:set nowrap
+
+" Add vimrc_coc config
+source ~/.vimrc_coc_config
 
