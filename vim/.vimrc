@@ -29,7 +29,7 @@ else
   if !isdirectory($HOME."/.vim/undo-dir")
     call mkdir($HOME."/.vim/undo-dir", "", 0700)
   endif
-  set undodir=~/.vim/undo-dir 
+  set undodir=~/.vim/undo-dir
   set undofile
 endif
 
@@ -76,10 +76,10 @@ set viminfo+=n~/.vim/viminfo
 colorscheme gruvbox
 set background=dark
 
-" Set line numbers 
+" Set line numbers
 set number
 
-" Set incsearch 
+" Set incsearch
 set incsearch
 
 " Use <esc> to clear the highlighting of :set hlsearch.
@@ -103,7 +103,7 @@ set display+=lastline
 set backupdir=~/.vim/vimtmp//,.
 set directory=~/.vim/vimtmp//,.
 
-" Set path for plugins 
+" Set path for plugins
 set runtimepath^=~/.vim/bundle/
 
 " Set Pathogen plugin manager
@@ -119,15 +119,15 @@ let g:lightline = {
 set ts=2 sw=2 et
 
 " set indent guide for tabs
-:set list lcs=tab:\|\ 
-  
-" set indentLine plugin  
+:set list lcs=tab:\|\
+
+" set indentLine plugin
 let g:indentLine_char = '|'
 
 " Add Tmux Color Compatibility
 set term=screen-256color
 
-" Autocompletion 
+" Autocompletion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
@@ -143,11 +143,31 @@ nmap <Leader>t :NERDTreeToggle<CR>
 " Remove annoying *BEEEP*
 set visualbell
 
-" remove wrapping
-:set textwidth=0 
-:set wrapmargin=0
-:set nowrap
+" Set line wrapping
+set wrap
+set linebreak
+
+" Prevent vim from inserting line breaks in newly entered text
+set textwidth=0
+set wrapmargin=0
+
+" Indents word-wrapped lines as much as the 'parent' line
+set breakindent
+
+" add mapping to move tabs left and right using Alt + direction
+noremap <Leader>h  :tabmove -1<CR>
+noremap <Leader>l :tabmove +1<CR>
+
+" add shortcut to move to last active tab quickly
+if !exists( "g:lasttab" )
+  let g:lasttab = 1
+endif
+nmap <Leader>lt :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
 
 " Add vimrc_coc config
 source ~/.vimrc_coc_config
+
+" Remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
 
