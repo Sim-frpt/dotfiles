@@ -115,6 +115,11 @@ let g:lightline = {
     \ 'colorscheme': 'seoul256',
     \ }
 
+" remap j and k so that they don't skip a single line visually represented as
+" several
+nnoremap j gj
+nnoremap k gk
+
 " set tabstop and shiftwidth to 2 and enable expandtab
 set ts=2 sw=2 et
 
