@@ -66,8 +66,14 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
+" set encoding
+set encoding=utf8
+
 " set Leader
 let g:mapleader=","
+
+" prevent .netrwhist file from being created
+let g:netrw_dirhistmax=0
 
 " Change viminfo location
 set viminfo+=n~/.vim/viminfo
@@ -76,8 +82,16 @@ set viminfo+=n~/.vim/viminfo
 colorscheme gruvbox
 set background=dark
 
-" Set line numbers
-set number
+" Set line numbers and relative line numbers
+:set number relativenumber
+
+" Make it so relative numbers are the default when in normal mode, and
+" 'normal' numbers in insert mode or when the buffer loses focus
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 
 " Set incsearch
 set incsearch
@@ -176,3 +190,30 @@ source ~/.vimrc_coc_config
 " Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+" NERDTrees File highlighting (for vim-devicons)
+" conceallevel removes brackets around icons (normally at 2)
+set conceallevel=3
+
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
