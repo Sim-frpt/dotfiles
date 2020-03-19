@@ -64,7 +64,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# Change Histfile location 
+# Change Histfile location
 HISTFILE=~/.dotfiles/.zsh/.zsh_history
 
 # Change zcompdump location (currently not working)
@@ -101,3 +101,13 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# Source fzf config
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Change fzf default config
+if [[ -f ~/.fzf.zsh ]] then
+    export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
+    export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview "cat {}"'
+fi
+
