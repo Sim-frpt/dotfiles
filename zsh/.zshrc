@@ -102,12 +102,18 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+#####################################
+# FZF CONFIG
 # Source fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Change fzf default config
 if [[ -f ~/.fzf.zsh ]] then
-    export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
-    export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview "cat {}"'
+    export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
+    export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview "bat --style=numbers --color=always {} | head -500"'
 fi
+
+#####################################
+# BAT CONFIG
+export BAT_THEME="ansi-dark"
 
