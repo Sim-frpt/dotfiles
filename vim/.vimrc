@@ -59,11 +59,6 @@ set backspace=indent,eol,start
 " the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
 
-" For all text files set 'textwidth' to 79 characters.
-" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Make sure textwidth works
-autocmd FileType text setlocal textwidth=79
-
 " Stop certain movements from always going to the first character of a line.
 " While this behaviour deviates from that of Vi, it does what most users
 " coming from other editors would expect.
@@ -102,7 +97,7 @@ set cmdheight=2
 :augroup END
 
 " Set time out length
-set ttimeout ttimeoutlen=200
+set timeout timeoutlen=400 ttimeout ttimeoutlen=200
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
@@ -134,8 +129,9 @@ if !exists( "g:lasttab" )
 endif
 au TabLeave * let g:lasttab = tabpagenr()
 
-" Remove trailing whitespace ( /e flag means no error )
-"autocmd BufWritePre * :%s/\s\+$//e
+" Show a visual cue at 80 char length
+set colorcolumn=80
+
 "------------------------------------------------------------
 " Vim file location options
 
@@ -186,17 +182,26 @@ hi IncSearch cterm=underline,bold ctermfg=White ctermbg=DarkMagenta
 " Set Pathogen plugin manager
 execute pathogen#infect()
 
+"##################################
+"LIGHTLINE
+
 " Change lightline plugin color
 let g:lightline = {
     \ 'colorscheme': 'seoul256',
     \ }
+"
+"##################################
+"INDENTLINE
 
 " Set indentLine character and color
 let g:indentLine_char = ''
 " Make it grey, not blue
 " let g:indentLine_setColors = 0
 
-" NERDTrees File highlighting (for vim-devicons)
+"##################################
+"NERDTREE
+
+" NERDTree File highlighting (for vim-devicons)
 " conceallevel removes brackets around icons (normally at 2)
 set conceallevel=3
 
@@ -224,6 +229,10 @@ call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
 call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
 call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
 
+"##################################
+"FZF-VIM
+set runtimepath+=$HOME/.fzf
+
 "------------------------------------------------------------
 " Mappings
 
@@ -246,7 +255,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Autoclosing tags
-inoremap " ""<left>
+"inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
@@ -269,6 +278,9 @@ noremap <Leader>l :tabmove +1<CR>
 
 " Trim whitespace with F5
 noremap <F5> :call TrimWhitespace()<CR>
+
+" Call fzf faster with CTRL + p
+nnoremap <C-p> :Files<Cr>
 
 "------------------------------------------------------------
 " Sourcing sub configs
