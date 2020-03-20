@@ -256,7 +256,7 @@ nnoremap k gk
 
 " Autoclosing tags
 "inoremap " ""<left>
-inoremap ' ''<left>
+"inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
@@ -281,6 +281,14 @@ noremap <F5> :call TrimWhitespace()<CR>
 
 " Call fzf faster with CTRL + p
 nnoremap <C-p> :Files<Cr>
+
+" Redeclare Rg command so that it uses a preview window
+" TODO there is still an issue with the highlighting color from Rg but I'm
+" sick of looking
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 
 "------------------------------------------------------------
 " Sourcing sub configs
