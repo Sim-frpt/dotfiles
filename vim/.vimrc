@@ -233,6 +233,30 @@ call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
 "FZF-VIM
 set runtimepath+=$HOME/.fzf
 
+" Redeclare Rg command so that it uses a preview window
+" TODO there is still an issue with the highlighting color from Rg but I'm
+" sick of looking
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 "------------------------------------------------------------
 " Mappings
 
@@ -257,11 +281,11 @@ nnoremap k gk
 " Autoclosing tags
 "inoremap " ""<left>
 "inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O
 
 " Remap CTRL + w to <Leader> + w
 :nnoremap <Leader>w <C-w>
@@ -282,14 +306,7 @@ noremap <F5> :call TrimWhitespace()<CR>
 " Call fzf faster with CTRL + p
 nnoremap <C-p> :Files<Cr>
 
-" Redeclare Rg command so that it uses a preview window
-" TODO there is still an issue with the highlighting color from Rg but I'm
-" sick of looking
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
-
+nnoremap <Leader>b :Buffer<Cr>
 "------------------------------------------------------------
 " Sourcing sub configs
 

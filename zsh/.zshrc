@@ -67,10 +67,6 @@ plugins=(git)
 # Change Histfile location
 HISTFILE=~/.dotfiles/.zsh/.zsh_history
 
-# Change zcompdump location (currently not working)
-# ZDOTDIR=$HOME/.dotfiles/.zsh/
-# autoload -U compinit -d ~/.dotfiles/.zsh/.zcompdump-$ZSH_VERSION
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -99,6 +95,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+################################
+# ZSH CONFIG
+
+# Set vim as preferred editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+#####################################
+# RUBY CONFIG
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
@@ -109,7 +114,7 @@ eval "$(rbenv init -)"
 
 # Change fzf default config
 if [[ -f ~/.fzf.zsh ]] then
-    export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
+    export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
     export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview "bat --style=numbers --color=always {} | head -500"'
 fi
 
