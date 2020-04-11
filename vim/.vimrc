@@ -45,12 +45,20 @@ set nomodeline
 " set encoding
 set encoding=utf8
 
+" Set vim register to interact with the system's clipboard
+set clipboard^=unnamedplus
+
 "------------------------------------------------------------
 " Usability options
 
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
+
+" Put Vim in Paste mode.  This is useful if you want to cut or copy
+" some text from one window and paste it in Vim.  This will avoid
+" unexpected effects.
+set pastetoggle=<F2>
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
@@ -98,9 +106,6 @@ set cmdheight=2
 
 " Set time out length
 set timeout timeoutlen=400 ttimeout ttimeoutlen=200
-
-" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
 
 " Set the minimal number of screen lines to keep above and below the cursor.
 if !&scrolloff
@@ -285,7 +290,7 @@ nnoremap k gk
 "inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
-"inoremap {;<CR> {<CR>};<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 " Remap CTRL + w to <Leader> + w
 :nnoremap <Leader>w <C-w>
@@ -306,7 +311,9 @@ noremap <F5> :call TrimWhitespace()<CR>
 " Call fzf faster with CTRL + p
 nnoremap <C-p> :Files<Cr>
 
+" Call :Buffer with a convenient mapping
 nnoremap <Leader>b :Buffer<Cr>
+
 "------------------------------------------------------------
 " Sourcing sub configs
 
