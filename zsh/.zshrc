@@ -64,9 +64,6 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# Change Histfile location
-HISTFILE=~/.dotfiles/.zsh/.zsh_history
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -98,6 +95,12 @@ source $ZSH/oh-my-zsh.sh
 ################################
 # ZSH CONFIG
 
+#So as not to be disturbed by Ctrl-S (hangs terminal) ctrl-Q in terminals:
+stty -ixon
+
+# Change Histfile location
+HISTFILE=~/.dotfiles/.zsh/.zsh_history
+
 # Set vim as preferred editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -109,6 +112,7 @@ eval "$(rbenv init -)"
 
 #####################################
 # FZF CONFIG
+
 # Source fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -121,4 +125,13 @@ fi
 #####################################
 # BAT CONFIG
 export BAT_THEME="ansi-dark"
+
+#####################################
+# NVM CONFIG
+#
+# Makes opening a shell session wayyyy slower, temp solution was to add
+# "--no-use", we'll see how it goes
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
