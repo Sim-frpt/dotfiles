@@ -1,5 +1,5 @@
 "------------------------------------------------------------
-" Features
+" FEATURES
 
 " Explicitly set Vim to use the Vim defaults, not the Vi defaults.
 " This helps warding off unexpected behaviour.
@@ -13,7 +13,7 @@ filetype indent plugin on
 syntax on
 
 "------------------------------------------------------------
-" Must have options
+" MUST HAVE OPTIONs
 
 " One such option is the 'hidden' option, which allows you to re-use the same
 " window and switch from an unsaved buffer without saving it first. Also allows
@@ -49,7 +49,7 @@ set encoding=utf8
 set clipboard^=unnamedplus
 
 "------------------------------------------------------------
-" Usability options
+" USABILITY OPTIONS
 
 " Use case insensitive search, except when using capital letters
 set ignorecase
@@ -104,6 +104,14 @@ set cmdheight=2
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
+" Make it so vim automatically saves and restores folds when a file is closed
+" and reopened
+augroup AutoSaveFolds
+  autocmd!
+  au BufWinLeave ?* mkview 1
+  au BufWinEnter ?* silent loadview 1
+augroup END
+
 " Set time out length
 set timeout timeoutlen=400 ttimeout ttimeoutlen=200
 
@@ -138,7 +146,7 @@ au TabLeave * let g:lasttab = tabpagenr()
 set colorcolumn=80
 
 "------------------------------------------------------------
-" Vim file location options
+" VIM FILE LOCATION OPTIONS
 
 " Use undo-dir directory to save undo info
 if !isdirectory($HOME."/.vim")
@@ -163,7 +171,7 @@ set backupdir=$HOME/.vim/vimtmp//
 set directory=$HOME/.vim/vimtmp//
 
 "------------------------------------------------------------
-" Indentation options
+" INDENTATION OPTIONS
 
 " set tabstop and shiftwidth to 2 and enable expandtab
 set shiftwidth=2
@@ -171,7 +179,7 @@ set softtabstop=2
 set expandtab
 
 "------------------------------------------------------------
-" Color options
+" COLOR OPTIONS
 
 " Set colorscheme
 colorscheme gruvbox
@@ -182,7 +190,7 @@ hi Search cterm=NONE ctermfg=Black ctermbg=DarkMagenta
 hi IncSearch cterm=underline,bold ctermfg=White ctermbg=DarkMagenta
 
 "------------------------------------------------------------
-" Plugins options
+" PLUGIN OPTIONS
 
 " Set Pathogen plugin manager
 execute pathogen#infect()
@@ -194,7 +202,7 @@ execute pathogen#infect()
 let g:lightline = {
     \ 'colorscheme': 'seoul256',
     \ }
-"
+
 "##################################
 "INDENTLINE
 
@@ -236,6 +244,7 @@ call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
 
 "##################################
 "FZF-VIM
+
 set runtimepath+=$HOME/.fzf
 
 " Redeclare Rg command so that it uses a preview window
@@ -262,8 +271,15 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+"##################################
+" MATCHIT
+
+" Add matchit plugin to extend the behaviour of '%'
+packadd! matchit
+
 "------------------------------------------------------------
-" Mappings
+" MAPPINGS
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
@@ -315,13 +331,13 @@ nnoremap <C-p> :Files<Cr>
 nnoremap <Leader>b :Buffer<Cr>
 
 "------------------------------------------------------------
-" Sourcing sub configs
+" SOURCING SUB-CONFIGS
 
 " Add vimrc_coc config
 source $HOME/.vimrc_coc_config
 
 "------------------------------------------------------------
-" Define user functions
+" DEFINE USER FUNCTIONS
 
 " Trim trailing whitespace
 " 1) fun! => ! would overwrite previously defined functions w/ the same name,
