@@ -2,5 +2,6 @@ vim/undo-dir/
 vim/viminfo
 vim/vimtmp/
 vim/pack/
+vim/view/
 
 zsh/.zsh_history
