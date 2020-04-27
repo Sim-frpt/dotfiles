@@ -181,17 +181,20 @@ set expandtab
 "------------------------------------------------------------
 " COLOR OPTIONS
 
-" Set colorscheme
-let g:gruvbox_italic = '1'
-colorscheme gruvbox
-set background=dark
-
 " Add Tmux Color Compatibility
 set t_Co=256
+set termguicolors
 
-" change highlight search color
-"hi Search cterm=NONE ctermfg=Black ctermbg=DarkMagenta
-"hi IncSearch cterm=underline,bold ctermfg=White ctermbg=DarkMagenta
+" I have to put this in for termguicolors to work in tmux, incomprehensible
+" but see https://github.com/vim/vim/issues/993 , or :h xterm-true-color
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Set colorscheme
+"let g:gruvbox_italic = '1'
+let g:one_allow_italics = 1
+set background=dark
+colorscheme one
 
 "------------------------------------------------------------
 " PLUGIN OPTIONS
