@@ -120,9 +120,6 @@ if !&scrolloff
   set scrolloff=1
 endif
 
-" Add Tmux Color Compatibility
-set t_Co=256
-
 " Provide smart autocompletion:
 set omnifunc=syntaxcomplete#Complete
 
@@ -182,12 +179,16 @@ set expandtab
 " COLOR OPTIONS
 
 " Set colorscheme
+let g:gruvbox_italic = '1'
 colorscheme gruvbox
 set background=dark
 
+" Add Tmux Color Compatibility
+set t_Co=256
+
 " change highlight search color
-hi Search cterm=NONE ctermfg=Black ctermbg=DarkMagenta
-hi IncSearch cterm=underline,bold ctermfg=White ctermbg=DarkMagenta
+"hi Search cterm=NONE ctermfg=Black ctermbg=DarkMagenta
+"hi IncSearch cterm=underline,bold ctermfg=White ctermbg=DarkMagenta
 
 "------------------------------------------------------------
 " PLUGIN OPTIONS
