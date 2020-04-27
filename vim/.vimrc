@@ -12,6 +12,9 @@ filetype indent plugin on
 " Enable syntax highlighting
 syntax on
 
+" Set Pathogen plugin manager
+execute pathogen#infect()
+
 "------------------------------------------------------------
 " MUST HAVE OPTIONs
 
@@ -192,9 +195,6 @@ set t_Co=256
 
 "------------------------------------------------------------
 " PLUGIN OPTIONS
-
-" Set Pathogen plugin manager
-execute pathogen#infect()
 
 "##################################
 "LIGHTLINE
