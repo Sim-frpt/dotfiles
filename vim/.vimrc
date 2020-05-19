@@ -178,20 +178,22 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+
 "------------------------------------------------------------
 " COLOR OPTIONS
 
 " Add Tmux Color Compatibility
-set t_Co=256
-set termguicolors
+"set t_Co=256
 
 " I have to put this in for termguicolors to work in tmux, incomprehensible
 " but see https://github.com/vim/vim/issues/993 , or :h xterm-true-color
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 " Set colorscheme
-"let g:gruvbox_italic = '1'
 let g:one_allow_italics = 1
 set background=dark
 colorscheme one
@@ -222,29 +224,33 @@ let g:indentLine_char = ''
 " conceallevel removes brackets around icons (normally at 2)
 set conceallevel=3
 
+" This function allows for different highlight color based on the file,
+" a bit hacky but it works. see https://github.com/preservim/nerdtree/issues/433
+" for the source. I replaced the guibg (previously #151515) by the guibg of my
+" current theme. You can get it with this command: `hi Normal`
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
   exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
-call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
-call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
-call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
-call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
-call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
-call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('jade', 'green', 'none', '#98C379', '#282c34')
+call NERDTreeHighlightFile('ini', 'green', 'none', '#98C379', '#282c34')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#282c34')
+call NERDTreeHighlightFile('yml', 'green', 'none', '#98C379', '#282c34')
+call NERDTreeHighlightFile('config', 'green', 'none', '#98C379', '#282c34')
+call NERDTreeHighlightFile('conf', 'green', 'none', '#98C379', '#282c34')
+call NERDTreeHighlightFile('json', 'green', 'none', '#98C379', '#282c34')
+call NERDTreeHighlightFile('html', 'green', 'none', '#98C379', '#282c34')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', '#56B6C2', '#282c34')
+call NERDTreeHighlightFile('css', 'cyan', 'none', '#56B6C2', '#282c34')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#282c34')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#E5C07B', '#282c34')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#282c34')
+call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#ABB2BF', '#282c34')
+call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#ABB2BF', '#282c34')
+call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#ABB2BF', '#282c34')
+call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#ABB2BF', '#282c34')
+call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#ABB2BF', '#282c34')
 
 "##################################
 "FZF-VIM
@@ -309,6 +315,7 @@ nnoremap k gk
 "inoremap ( ()<left>
 "inoremap [ []<left>
 inoremap { {}<left>
+inoremap {<esc> {
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
