@@ -116,7 +116,7 @@ augroup AutoSaveFolds
 augroup END
 
 " Set time out length
-set timeout timeoutlen=400 ttimeout ttimeoutlen=200
+set timeout timeoutlen=400 ttimeout ttimeoutlen=50
 
 " Set the minimal number of screen lines to keep above and below the cursor.
 if !&scrolloff
@@ -144,6 +144,15 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 " Show a visual cue at 80 char length
 set colorcolumn=80
+
+" Set Vim to map the escape sequence to Alt combinations, because
+" gnome-terminal sends an esc when using Alt -> same as Esc. See https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
 
 "------------------------------------------------------------
 " VIM FILE LOCATION OPTIONS
@@ -328,7 +337,7 @@ nmap <Leader>t :NERDTreeToggle<CR>
 " <Leader>lt makes you switch to the last tab that was opened
 nmap <Leader>lt :exe "tabn ".g:lasttab<CR>
 
-" add mapping to move tabs left and right using <Leader> + direction
+" Move tabs left and right using <Leader> + direction
 noremap <Leader>h  :tabmove -1<CR>
 noremap <Leader>l :tabmove +1<CR>
 
@@ -341,6 +350,13 @@ nnoremap <C-p> :Files<Cr>
 " Call :Buffer with a convenient mapping
 nnoremap <Leader>b :Buffer<Cr>
 
+"Mappings to move lines directly
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 "------------------------------------------------------------
 " SOURCING SUB-CONFIGS
 
