@@ -7,7 +7,7 @@ set nocompatible
 
 " Allows Vim to determine the type of the file from its file name,
 " load the plugin files for specific types and allow inteligent auto-indenting
-filetype indent plugin on
+filetype plugin indent on
 
 " Enable syntax highlighting
 syntax on
@@ -69,6 +69,15 @@ set backspace=indent,eol,start
 " When opening a new line and no filetype-specific indenting is enabled, keep
 " the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
+
+" Show existing tab with 2 space width
+set softtabstop=2
+
+" when indenting with '>' use 2 spaces width
+set shiftwidth=2
+
+"On pressing tab, insert 4 spaces
+set expandtab
 
 " Stop certain movements from always going to the first character of a line.
 " While this behaviour deviates from that of Vi, it does what most users
@@ -177,15 +186,6 @@ set viminfo+=n$HOME/.vim/viminfo
 " '%' signs. This will ensure file name uniqueness in the directory.
 set backupdir=$HOME/.vim/vimtmp//
 set directory=$HOME/.vim/vimtmp//
-
-"------------------------------------------------------------
-" INDENTATION OPTIONS
-
-" set tabstop and shiftwidth to 2 and enable expandtab
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-
 
 "------------------------------------------------------------
 " COLOR OPTIONS
