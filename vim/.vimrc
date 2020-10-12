@@ -154,14 +154,6 @@ au TabLeave * let g:lasttab = tabpagenr()
 " Show a visual cue at 80 char length
 set colorcolumn=80
 
-" Set Vim to map the escape sequence to Alt combinations with Uppercase letters, because gnome-terminal sends an esc when using Alt -> same as Esc. See https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim
-let c='A'
-while c <= 'Z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-
 "------------------------------------------------------------
 " VIM FILE LOCATION OPTIONS
 
@@ -349,13 +341,6 @@ nnoremap <C-p> :Files<Cr>
 " Call :Buffer with a convenient mapping
 nnoremap <Leader>b :Buffer<Cr>
 
-"Mappings to move lines directly
-nnoremap <A-J> :m .+1<CR>==
-nnoremap <A-K> :m .-2<CR>==
-inoremap <A-J> <Esc>:m .+1<CR>==gi
-inoremap <A-K> <Esc>:m .-2<CR>==gi
-vnoremap <A-K> :m '<-2<CR>gv=gv
-vnoremap <A-J> :m '>+1<CR>gv=gv
 "------------------------------------------------------------
 " SOURCING SUB-CONFIGS
 
