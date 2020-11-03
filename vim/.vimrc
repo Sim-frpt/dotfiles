@@ -301,7 +301,7 @@ let g:mapleader=","
 " Use <esc> to clear the highlighting of :set hlsearch.
 " Explanation of why we need the second line:
 " When built with the +termresponse feature, Vim sends a special control sequence (see :set t_RV?) to the terminal. When your terminal emulator see this sequence it responds with the sequence ESC ]>1;3201;0c. The ESC is mapped to :noh and you get the rest of the sequence on the command line. With the OP’s mapping the rest of the sequence is taken as normal commands, thus the last c starts a change command. So, this ESC mapping is interfering with a query response that xterm (or whatever) is giving to Vim. Chris Johnsen (https://stackoverflow.com/questions/15014923/why-is-vim-starting-in-delete-mode/15015109#15015109)
-nnoremap <esc> :noh<return><esc>
+nnoremap <silent><esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
 
 " remap j and k so that they don't skip a single line visually represented as
@@ -313,6 +313,8 @@ nnoremap k gk
 "inoremap " ""<left>
 "inoremap ' ''<left>
 "inoremap ( ()<left>
+"inoremap (<esc> (
+"inoremap (<CR> (<CR>)<ESC>O
 "inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<esc> {

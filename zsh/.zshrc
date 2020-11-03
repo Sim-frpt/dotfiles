@@ -105,6 +105,9 @@ HISTFILE=~/.dotfiles/.zsh/.zsh_history
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# Use vim bindings in shell
+bindkey -v
+
 #####################################
 # RUBY CONFIG
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -131,7 +134,7 @@ export BAT_THEME="ansi-dark"
 export NVM_DIR="$HOME/.nvm"
 # Makes opening a shell session wayyyy slower but I haven't found a solution yet
 
- #This loads nvm
+# This loads nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # This loads nvm bash_completion
