@@ -324,6 +324,10 @@ inoremap {;<CR> {<CR>};<ESC>O
 " Remap CTRL + w to <Leader> + w
 :nnoremap <Leader>w <C-w>
 
+" Easier split resize
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
 " Remap NERDTree autofocus
 nmap <Leader>t :NERDTreeToggle<CR>
 

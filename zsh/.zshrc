@@ -130,16 +130,5 @@ fi
 export BAT_THEME="ansi-dark"
 
 #####################################
-# NVM CONFIG
-export NVM_DIR="$HOME/.nvm"
-# Makes opening a shell session wayyyy slower but I haven't found a solution yet
-
-# This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-# This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-#####################################
 # ALIASES SOURCING
 [ -f $HOME/.aliases.zsh ] && source $HOME/.aliases.zsh
