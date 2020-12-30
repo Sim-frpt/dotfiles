@@ -4,7 +4,8 @@ vim/undo-dir/
 vim/viminfo
 vim/vimtmp/
 vim/pack/
-vim/view/
+vim/view/*
+!vim/view/~=+.vimrc=
 
 zsh/.zsh_history
 

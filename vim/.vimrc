@@ -120,8 +120,8 @@ set cmdheight=2
 " and reopened
 augroup AutoSaveFolds
   autocmd!
-  au BufWinLeave ?* mkview 1
-  au BufWinEnter ?* silent loadview 1
+  au BufWinLeave *.* mkview
+  au BufWinEnter *.* silent loadview
 augroup END
 
 " Set time out length
@@ -316,10 +316,10 @@ nnoremap k gk
 "inoremap (<esc> (
 "inoremap (<CR> (<CR>)<ESC>O
 "inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<esc> {
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+"inoremap { {}<left>
+"inoremap {<esc> {
+"inoremap {<CR> {<CR>}<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O
 
 " Remap CTRL + w to <Leader> + w
 :nnoremap <Leader>w <C-w>
