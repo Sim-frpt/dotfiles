@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function change_setting() {
+function change_setting {
   schema=$1
   key=$2
   value=$3

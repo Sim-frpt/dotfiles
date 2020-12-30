@@ -102,8 +102,7 @@ stty -ixon
 HISTFILE=~/.dotfiles/.zsh/.zsh_history
 
 # Set vim as preferred editor
-export VISUAL=vim
-export EDITOR="$VISUAL"
+export EDITOR=vim
 
 # Use vim bindings in shell
 bindkey -v
