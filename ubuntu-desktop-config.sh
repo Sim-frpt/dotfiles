@@ -18,6 +18,3 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 10.0
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 17.0
-
-
-
