@@ -14,11 +14,16 @@ function install {
   fi
 }
 
+install bat
+# See https://github.com/sharkdp/bat
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
 install curl
 install fzf
 install gimp
 install git
 install htop
+install fonts-powerline
 install ripgrep
 install ruby
 install tmux

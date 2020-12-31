@@ -1,0 +1,13 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "alt+l",
+    "command": "pixelbyte.love2d.run",
+    "when": "editorTextFocus && editorLangId == 'lua'"
+  },
+  {
+    "key": "alt+l",
+    "command": "-pixelbyte.love2d.run",
+    "when": "editorTextFocus && editorLangId == 'lua'"
+  }
+]

@@ -23,6 +23,7 @@ change_setting org.gnome.desktop.wm.keybindings switch-input-source "['<Primary>
 change_setting org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Primary><Shift>space']"
 change_setting org.gnome.desktop.peripherals.mouse natural-scroll false
 change_setting org.gnome.desktop.peripherals.touchpad natural-scroll false
+change_setting org.gtk.Settings.FileChooser show-hidden true
 
 # Lower keyboard repeat delay to 200 (faster repeat when holding down a key) and lower keyboard repeat interval
 change_setting org.gnome.desktop.peripherals.keyboard delay 200

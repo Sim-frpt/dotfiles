@@ -1,0 +1,31 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Material Theme High Contrast",
+  "editor.minimap.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "color-highlight.markerType": "",
+  "color-highlight.markRuler": false,
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "git.detectSubmodulesLimit": 20,
+  "prettier.resolveGlobalModules": true,
+  "prettier.tabWidth": 4,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "prettier.singleQuote": true,
+  "editor.formatOnPaste": true,
+  "window.zoomLevel": 1,
+  "breadcrumbs.enabled": true,
+  "bracket-pair-colorizer-2.scopeLineCSS": [
+    "borderStyle : solid",
+    "borderWidth : 1px",
+    "borderColor : {color}",
+    "opacity: 0.3"
+  ],
+  "editor.rulers": [80],
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "pixelbyte.love2d.path": "/usr/bin/love",
+  "editor.semanticTokenColorCustomizations": null,
+  "editor.codeActionsOnSave": null
+}

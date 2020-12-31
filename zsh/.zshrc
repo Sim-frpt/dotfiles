@@ -137,7 +137,9 @@ export BAT_THEME="ansi-dark"
 # This export is used to mitigate the slow startup of my shell when I use nvm. This slow start is due to nvm checking which node version to auto-use based on .nvmrc or a similar config file.
 # There is a flag for skipping this check, but then you have to supply a fallback to a preferred version for fast access.
 # See https://www.ioannispoulakas.com/2020/02/22/how-to-speed-up-shell-load-while-using-nvm/ for full details.
-export PATH=~/.nvm/versions/node/v15.5.0/bin:$PATH
+NVM_NODE_V=$(ls ~/.nvm/versions/node/ | sort -t '.' -k2 -nr | head -1)
+NVM_NODE_V="${NODE_VERSION:-v15.5.0}"
+export PATH=~/.nvm/versions/node/$NODE_VERSION/bin:$PATH
 
 # Source NVM
 export NVM_DIR="$HOME/.nvm"
