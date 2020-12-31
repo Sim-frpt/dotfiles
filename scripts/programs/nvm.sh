@@ -2,10 +2,12 @@
 
 # NVM
 # https://github.com/nvm-sh/nvm
-NVM_DIR=~/.nvm
-git clone https://github.com/nvm-sh/nvm.git NVM_DIR
+nvm_dir=~/.nvm
 
-cd NVM_DIR && git checkout v0.37.2
+git clone https://github.com/nvm-sh/nvm.git nvm_dir
+cd nvm_dir
+latest_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+git checkout latest_tag
 ./nvm.sh
 
 
