@@ -1,18 +1,6 @@
 #!/bin/bash
 
-function change_setting {
-  schema=$1
-  key=$2
-  value=$3
-  writable=$(gsettings writable $schema $key)
-
-  if [ $? -eq 0 ] && [ $writable == true ]; then
-    echo "Changing '${schema}' '${key}' to '${value}'"
-    gsettings set $schema $key $value
-  else
-    echo "ERROR: could not set ${schema} ${key} to ${value}"
-  fi
-}
+. "$(pwd)/utils.sh"
 
 # This is a set of preferences for the Ubuntu desktop env
 change_setting org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
@@ -35,3 +23,18 @@ change_setting org.gnome.settings-daemon.plugins.color night-light-enabled true
 change_setting org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false
 change_setting org.gnome.settings-daemon.plugins.color night-light-schedule-to 10.0
 change_setting org.gnome.settings-daemon.plugins.color night-light-schedule-from 17.0
+
+# download gnome-terminal theme
+mkdir -p "${HOME}/src"
+cd "${HOME}/src"
+git clone https://github.com/Mayccoll/Gogh.git gogh
+cd gogh/themes
+
+# necessary on ubuntu
+export TERMINAL=gnome-terminal
+
+# install theme
+./gruvbox-dark.sh
+
+rm -rf "${HOME}/src"
+
