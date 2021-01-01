@@ -20,13 +20,11 @@ silent! normal! zE
 358,374fold
 1
 normal! zo
-293
-normal! zo
-let s:l = 319 - ((20 * winheight(0) + 22) / 45)
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-319
+1
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 nohlsearch
