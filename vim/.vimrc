@@ -13,7 +13,22 @@ filetype plugin indent on
 syntax on
 
 " Set Pathogen plugin manager
-execute pathogen#infect()
+" execute pathogen#infect()
+
+" Set Vim-Plug plugin manager
+call plug#begin('~/.vim/plugged')
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'ryanoasis/vim-devicons'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-surround'
+Plug 'Yggdroot/indentLine'
+call plug#end()
 
 "------------------------------------------------------------
 " MUST HAVE OPTIONs
