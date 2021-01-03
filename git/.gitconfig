@@ -1,6 +1,8 @@
 [user]
 	email = simon.fraipont@gmail.com
 	name = Simon Fraipont
+[core]
+	editor = vim
 [color]
 	ui = auto
 [status]

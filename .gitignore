@@ -4,9 +4,8 @@ vim/autoload
 vim/undo-dir/
 vim/viminfo
 vim/vimtmp/
-vim/pack/
 vim/plugged
-vim/view/*
+vim/view
 
 zsh/.zsh_history
 

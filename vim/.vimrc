@@ -12,8 +12,8 @@ filetype plugin indent on
 " Enable syntax highlighting
 syntax on
 
-" Set Pathogen plugin manager
-" execute pathogen#infect()
+"------------------------------------------------------------
+" PLUGIN MANAGEMENT
 
 " Set Vim-Plug plugin manager
 call plug#begin('~/.vim/plugged')
@@ -21,6 +21,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -217,6 +218,46 @@ colorscheme one
 " PLUGIN OPTIONS
 
 "##################################
+" COC.NVIM
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-prettier', 'coc-highlight', 'coc-emmet', 'coc-solargraph', 'coc-html', 'coc-css', 'coc-pairs']
+
+"##################################
+"FZF-VIM
+
+set runtimepath+=$HOME/.fzf
+
+" Redeclare Rg command so that it uses a preview window
+" TODO there is still an issue with the highlighting color from Rg but I'm
+" sick of looking
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+"##################################
+"INDENTLINE
+
+" Set indentLine character and color
+let g:indentLine_char = ''
+
+"##################################
 "LIGHTLINE
 
 " Change lightline plugin color
@@ -225,12 +266,10 @@ let g:lightline = {
     \ }
 
 "##################################
-"INDENTLINE
+" MATCHIT
 
-" Set indentLine character and color
-let g:indentLine_char = ''
-" Make it grey, not blue
-" let g:indentLine_setColors = 0
+" Add matchit plugin to extend the behaviour of '%'
+packadd! matchit
 
 "##################################
 "NERDTREE
@@ -267,42 +306,6 @@ call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#ABB2BF', '#282c34')
 call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#ABB2BF', '#282c34')
 call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#ABB2BF', '#282c34')
 
-"##################################
-"FZF-VIM
-
-set runtimepath+=$HOME/.fzf
-
-" Redeclare Rg command so that it uses a preview window
-" TODO there is still an issue with the highlighting color from Rg but I'm
-" sick of looking
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
-
-" Customize fzf colors to match your color scheme
-" - fzf#wrap translates this to a set of `--color` options
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
-"##################################
-" MATCHIT
-
-" Add matchit plugin to extend the behaviour of '%'
-packadd! matchit
-
 "------------------------------------------------------------
 " MAPPINGS
 
@@ -323,18 +326,6 @@ nnoremap <esc>^[ <esc>^[
 " several
 nnoremap j gj
 nnoremap k gk
-
-" Autoclosing tags
-"inoremap " ""<left>
-"inoremap ' ''<left>
-"inoremap ( ()<left>
-"inoremap (<esc> (
-"inoremap (<CR> (<CR>)<ESC>O
-"inoremap [ []<left>
-"inoremap { {}<left>
-"inoremap {<esc> {
-"inoremap {<CR> {<CR>}<ESC>O
-"inoremap {;<CR> {<CR>};<ESC>O
 
 " Remap CTRL + w to <Leader> + w
 :nnoremap <Leader>w <C-w>
