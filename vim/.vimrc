@@ -28,7 +28,6 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
-Plug 'Yggdroot/indentLine'
 call plug#end()
 
 "------------------------------------------------------------
@@ -253,12 +252,6 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-
-"##################################
-"INDENTLINE
-
-" Set indentLine character and color
-let g:indentLine_char = ''
 
 "##################################
 "LIGHTLINE
