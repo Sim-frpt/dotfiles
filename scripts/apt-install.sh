@@ -31,7 +31,6 @@ install gimp
 install git
 install htop
 install fonts-powerline
-install ruby
 install tmux
 install vim
 install xclip

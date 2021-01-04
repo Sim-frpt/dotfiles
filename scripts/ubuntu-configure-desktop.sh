@@ -24,7 +24,7 @@ change_setting org.gnome.settings-daemon.plugins.color night-light-schedule-auto
 change_setting org.gnome.settings-daemon.plugins.color night-light-schedule-to 10.0
 change_setting org.gnome.settings-daemon.plugins.color night-light-schedule-from 17.0
 
-# download gnome-terminal theme
+# Download gnome-terminal theme
 mkdir -p "${HOME}/src"
 cd "${HOME}/src"
 git clone https://github.com/Mayccoll/Gogh.git gogh
@@ -37,4 +37,3 @@ export TERMINAL=gnome-terminal
 ./gruvbox-dark.sh
 
 rm -rf "${HOME}/src"
-

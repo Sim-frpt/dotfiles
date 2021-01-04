@@ -110,7 +110,6 @@ bindkey -v
 #####################################
 # RUBY CONFIG
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 #####################################
 # FZF CONFIG
