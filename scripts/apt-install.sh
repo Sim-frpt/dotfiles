@@ -28,6 +28,7 @@ install build-essential
 install curl
 install flameshot
 install fonts-cascadia-code
+install figlet
 install fzf
 install gimp
 install git
