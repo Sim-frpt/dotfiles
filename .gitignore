@@ -1,4 +1,5 @@
 tmux/resurrect/
+tmux/plugins/
 
 vim/autoload
 vim/undo-dir/
