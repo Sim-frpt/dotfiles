@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # Insomnia
+
+echo "####################"
+echo "Installing Insomnia"
+echo "####################"
+
 # Add to sources
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list

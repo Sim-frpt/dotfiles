@@ -1,7 +1,12 @@
 #!/bin/bash
 
 # NVM
+
 # https://github.com/nvm-sh/nvm
+echo "####################"
+echo "Installing NVM"
+echo "####################"
+
 export NVM_DIR="$HOME/.nvm" && (
   git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
   cd "$NVM_DIR"

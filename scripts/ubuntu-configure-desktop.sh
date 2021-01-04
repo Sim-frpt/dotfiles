@@ -15,7 +15,7 @@ change_setting org.gtk.Settings.FileChooser show-hidden true
 
 # Lower keyboard repeat delay to 200 (faster repeat when holding down a key) and lower keyboard repeat interval
 change_setting org.gnome.desktop.peripherals.keyboard delay 200
-change_setting org.gnome.desktop.peripherals.keyboard repeat-interval 25
+change_setting org.gnome.desktop.peripherals.keyboard repeat-interval 50
 
 # Various night light settings
 change_setting org.gnome.settings-daemon.plugins.color night-light-temperature 3228
