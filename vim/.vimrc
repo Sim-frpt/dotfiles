@@ -349,6 +349,8 @@ nnoremap <C-p> :Files<Cr>
 " Call :Buffer with a convenient mapping
 nnoremap <Leader>b :Buffer<Cr>
 
+" Call Rg faster with leader + g
+nnoremap <Leader>g :Rg<Cr>
 "------------------------------------------------------------
 " SOURCING SUB-CONFIGS
 
