@@ -192,6 +192,9 @@ set viminfo+=n$HOME/.vim/viminfo
 " Set backup and swap files in vimtmp. The trailing '//' ensures the file name
 " will be built from the comlete path to the file, with all path separators substituted to
 " '%' signs. This will ensure file name uniqueness in the directory.
+if !isdirectory($HOME."/.vim/vimtmp")
+  call mkdir($HOME."/.vim/vimtmp", "", 0700)
+endif
 set backupdir=$HOME/.vim/vimtmp//
 set directory=$HOME/.vim/vimtmp//
 
