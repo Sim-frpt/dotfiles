@@ -29,7 +29,7 @@ function link_dotfile {
   ln -s ${dotfiles_dir}${file_to_link} ${destination}
 }
 
-link_dotfile /git/.gitconfig .prettierrc
+link_dotfile /git/.gitconfig .gitconfig
 link_dotfile /prettier/.prettierrc .prettierrc
 link_dotfile /tmux .tmux
 link_dotfile /tmux/.tmux.conf .tmux.conf

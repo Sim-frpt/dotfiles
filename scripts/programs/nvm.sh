@@ -2,13 +2,10 @@
 
 # NVM
 # https://github.com/nvm-sh/nvm
-nvm_dir=~/.nvm
+export NVM_DIR="$HOME/.nvm" && (
+  git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
+  cd "$NVM_DIR"
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+) && \. "$NVM_DIR/nvm.sh"
 
-git clone https://github.com/nvm-sh/nvm.git nvm_dir
-cd nvm_dir
-latest_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
-git checkout latest_tag
-./nvm.sh
-
-
-
+nvm install node
