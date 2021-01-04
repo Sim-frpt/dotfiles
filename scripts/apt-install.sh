@@ -23,6 +23,8 @@ install bat
 # See https://github.com/sharkdp/bat
 mkdir -p $HOME/.local/bin
 ln -s /usr/bin/batcat $HOME/.local/bin/bat
+# GCC compiler
+install build-essential
 install curl
 install flameshot
 install fonts-cascadia-code
