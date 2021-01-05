@@ -37,6 +37,9 @@ cd gogh/themes
 # necessary on ubuntu
 export TERMINAL=gnome-terminal
 
+# See https://github.com/Mayccoll/Gogh/issues/63 if the correct profile is not correctly set
+dconf reset -f /org/gnome/terminal/legacy/profiles:/
+
 # install theme
 ./gruvbox-dark.sh
 

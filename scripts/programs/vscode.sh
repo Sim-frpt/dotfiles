@@ -13,7 +13,7 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code
-rm microsoft.gpg
+rm packages.microsoft.gpg
 
 function install {
   code --install-extension $1
