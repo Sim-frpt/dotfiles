@@ -1,6 +1,8 @@
 #!/bin/bash
 
-figlet 'Setting up ubuntu machine'
+echo '####################'
+echo 'Setting up ubuntu machine'
+echo '####################'
 
 echo '------------------------------------------------------------'
 echo 'Installing apt packages -> ./apt-install.sh'
