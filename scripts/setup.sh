@@ -25,6 +25,10 @@ echo 'Creating symlinks -> ./setup-vim.sh'
 echo '------------------------------------------------------------'
 ./symlink.sh
 
+# Get tmux plugin submodule
+git submodule init
+git submodule update
+
 read -p -s -n 1 "Do you wish to configure the current gnome-terminal profile? y/n " configure_term
 
 # check against '\x0a' is checking if enter was pressed

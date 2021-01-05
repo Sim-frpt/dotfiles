@@ -1,8 +1,8 @@
 #!/bin/bash
 
-vim_plug_location="${HOME}/.vim/autoload/plug.vim"
+vim_plug_location="${HOME}/.vim/autoload/"
 
-if [ ! -f ${vim_plug_location} ]; then
+if [ ! -d $vim_plug_location ] && [ ! -f "$vim_plug_location/plug.vim" ]; then
   echo "####################"
   echo "Installing vim-plug..."
   echo "####################"
