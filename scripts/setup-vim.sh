@@ -6,7 +6,7 @@ if [ ! -d $vim_plug_location ] && [ ! -f "$vim_plug_location/plug.vim" ]; then
   echo "####################"
   echo "Installing vim-plug..."
   echo "####################"
-  curl -fLo ${vim_plug_location} --create-dirs \
+  curl -fLo "${vim_plug_location}/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
