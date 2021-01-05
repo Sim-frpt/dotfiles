@@ -32,6 +32,7 @@ install figlet
 install fzf
 install gimp
 install git
+install grub-customizer
 install htop
 install fonts-powerline
 install tmux

@@ -24,6 +24,10 @@ change_setting org.gnome.settings-daemon.plugins.color night-light-schedule-auto
 change_setting org.gnome.settings-daemon.plugins.color night-light-schedule-to 10.0
 change_setting org.gnome.settings-daemon.plugins.color night-light-schedule-from 17.0
 
+# Add desktop apps to favourites
+change-setting org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'org.gnome.Terminal.desktop', 'insomnia.desktop', 'dbeaver.desktop', 'gimp_gimp.desktop', 'code.desktop']"
+
+
 # Download gnome-terminal theme
 mkdir -p "${HOME}/src"
 cd "${HOME}/src"

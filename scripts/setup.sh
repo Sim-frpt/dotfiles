@@ -1,11 +1,7 @@
 #!/bin/bash
 
-figlet 'setting up ubuntu machine'
+figlet 'Setting up ubuntu machine'
 
-echo '------------------------------------------------------------'
-echo 'Configuring desktop -> ./ubuntu-configure-desktop.sh'
-echo '------------------------------------------------------------'
-./ubuntu-configure-desktop.sh
 echo '------------------------------------------------------------'
 echo 'Installing apt packages -> ./apt-install.sh'
 echo '------------------------------------------------------------'
@@ -18,6 +14,10 @@ echo '------------------------------------------------------------'
 echo 'Setting up vim -> ./setup-vim.sh'
 echo '------------------------------------------------------------'
 ./setup-vim.sh
+echo '------------------------------------------------------------'
+echo 'Configuring desktop -> ./ubuntu-configure-desktop.sh'
+echo '------------------------------------------------------------'
+./ubuntu-configure-desktop.sh
 echo '------------------------------------------------------------'
 echo 'Creating symlinks -> ./setup-vim.sh'
 echo '------------------------------------------------------------'
@@ -35,4 +35,4 @@ else
   echo "You can manually configure your terminal profile by running ./ubuntu-configure-term-profile.sh"
 fi
 
-figlet "we're back..."
+figlet "We're back..."
