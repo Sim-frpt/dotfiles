@@ -26,21 +26,3 @@ change_setting org.gnome.settings-daemon.plugins.color night-light-schedule-from
 
 # Add desktop apps to favourites
 change_setting org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'org.gnome.Terminal.desktop', 'insomnia.desktop', 'dbeaver.desktop', 'gimp_gimp.desktop', 'code.desktop']"
-
-
-# Download gnome-terminal theme
-mkdir -p "${HOME}/src"
-cd "${HOME}/src"
-git clone https://github.com/Mayccoll/Gogh.git gogh
-cd gogh/themes
-
-# necessary on ubuntu
-export TERMINAL=gnome-terminal
-
-# See https://github.com/Mayccoll/Gogh/issues/63 if the correct profile is not correctly set
-dconf reset -f /org/gnome/terminal/legacy/profiles:/
-
-# install theme
-./gruvbox-dark.sh
-
-rm -rf "${HOME}/src"

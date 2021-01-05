@@ -2,6 +2,46 @@
 
 . "$(pwd)/utils.sh"
 
+echo "####################"
+echo "install gruvbox-dark profile"
+echo "####################"
+
+# Reset default profile
+dconf reset -f /org/gnome/terminal/legacy/profiles:/
+
+default_id=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
+
+# Rename default profile from 'Unnamed' to 'Default', See https://github.com/Mayccoll/Gogh/issues/63
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$default_id/ visible-name 'Default'
+
+# Download gnome-terminal theme
+mkdir -p "${HOME}/src"
+cd "${HOME}/src"
+git clone https://github.com/Mayccoll/Gogh.git gogh
+cd gogh/themes
+
+# necessary on ubuntu
+export TERMINAL=gnome-terminal
+
+#profile_list=$(gsettings get org.gnome.Terminal.ProfilesList list | tr -d "[]'" | sed 's/,\s/\n/')
+
+# install theme
+./gruvbox-dark.sh
+
+rm -rf "${HOME}/src"
+
+# Programmatically setting the profile as default is apparently impossible, have to ask the user to do it
+continue=false
+
+while [ $continue = false ]; do
+  read -p "Please select the gruvbox-dark profile to configure, then press \"y\" to continue `echo $'\n> '`" should_continue
+
+  echo $should_continue;
+  if [ $should_continue == "y" ]; then
+    continue=true
+  fi
+done
+
 gnome_terminal_profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
 font="Cascadia Code 13"
 
