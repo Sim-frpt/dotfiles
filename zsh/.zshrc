@@ -138,11 +138,13 @@ export BAT_THEME="ansi-dark"
 # There is a flag for skipping this check, but then you have to supply a fallback to a preferred version for fast access.
 # See https://www.ioannispoulakas.com/2020/02/22/how-to-speed-up-shell-load-while-using-nvm/ for full details.
 # Feels a bit hacky with nvm_node_v, but that will do for now
-nvm_node_v=$(ls ~/.nvm/versions/node/ | sort -t '.' -k2 -nr | head -1)
-nvm_node_v="${NODE_VERSION:-v15.5.0}"
-export PATH=~/.nvm/versions/node/$nvm_node_v/bin:$PATH
+export NVM_DIR="$HOME/.nvm"
+
+if [ -d "$NVM_DIR/versions/node" ]; then
+    node_version=$(ls ~/.nvm/versions/node/ | sort -t '.' -k2 -nr | head -1)
+    export PATH=~/.nvm/versions/node/$node_version/bin:$PATH
+fi
 
 # Source NVM
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
