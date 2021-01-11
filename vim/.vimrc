@@ -222,8 +222,8 @@ endif
 
 " Set colorscheme
 let g:one_allow_italics = 1
-set background=dark
 colorscheme one
+set background=dark
 
 "------------------------------------------------------------
 " PLUGIN OPTIONS
@@ -233,7 +233,7 @@ colorscheme one
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-prettier', 'coc-highlight', 'coc-emmet', 'coc-solargraph', 'coc-html', 'coc-css', 'coc-pairs', 'coc-eslint']
 
 "##################################
-"FZF-VIM
+" FZF-VIM
 
 set runtimepath+=$HOME/.fzf
 
