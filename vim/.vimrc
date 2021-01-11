@@ -10,7 +10,9 @@ set nocompatible
 filetype plugin indent on
 
 " Enable syntax highlighting
-syntax on
+if !exists('g:syntax_on')
+  syntax enable
+endif
 
 "------------------------------------------------------------
 " PLUGIN MANAGEMENT
@@ -25,9 +27,9 @@ Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 "------------------------------------------------------------
@@ -139,6 +141,13 @@ augroup AutoSaveFolds
   au BufWinEnter *.* silent loadview
 augroup END
 
+" This option makes sure the local working directory is correctly set to the
+" opened buffer. See https://vi.stackexchange.com/questions/11903/working-directory-different-than-current-file-directory
+set viewoptions -=curdir
+
+" Automatically change the current directory, see https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
+autocmd BufEnter * silent! lcd %:p:h
+
 " Set time out length
 set timeout timeoutlen=400 ttimeout ttimeoutlen=50
 
@@ -221,7 +230,7 @@ colorscheme one
 
 "##################################
 " COC.NVIM
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-prettier', 'coc-highlight', 'coc-emmet', 'coc-solargraph', 'coc-html', 'coc-css', 'coc-pairs']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-prettier', 'coc-highlight', 'coc-emmet', 'coc-solargraph', 'coc-html', 'coc-css', 'coc-pairs', 'coc-eslint']
 
 "##################################
 "FZF-VIM
@@ -331,7 +340,7 @@ nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Remap NERDTree autofocus
-nmap <Leader>t :NERDTreeToggle<CR>
+nmap <Leader>t :NERDTreeToggle %<CR>
 
 " <Leader>lt makes you switch to the last tab that was opened
 nmap <Leader>lt :exe "tabn ".g:lasttab<CR>
