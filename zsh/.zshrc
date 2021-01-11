@@ -107,14 +107,22 @@ export EDITOR=vim
 # Use vim bindings in shell
 bindkey -v
 
+
 #####################################
-# RUBY CONFIG
+# ITERM2 SHELL CONFIGURATION        #
+#####################################
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+#####################################
+# RUBY CONFIG                       #
+#####################################
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 #####################################
-# FZF CONFIG
-
+# FZF CONFIG                        #
+#####################################
 # Source fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

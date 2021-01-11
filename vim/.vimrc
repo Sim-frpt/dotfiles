@@ -64,7 +64,7 @@ set nomodeline
 set encoding=utf8
 
 " Set vim register to interact with the system's clipboard
-set clipboard^=unnamedplus
+set clipboard=unnamed "
 
 "------------------------------------------------------------
 " USABILITY OPTIONS
@@ -226,7 +226,8 @@ let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-prettier', 'coc-
 "##################################
 "FZF-VIM
 
-set runtimepath+=$HOME/.fzf
+" Necessary for macos
+set runtimepath+=$HOMEBREW_PREFIX/opt/fzf
 
 " Redeclare Rg command so that it uses a preview window
 " TODO there is still an issue with the highlighting color from Rg but I'm
