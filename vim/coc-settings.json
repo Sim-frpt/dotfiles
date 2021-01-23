@@ -6,4 +6,5 @@
     "typescript",
     "typescriptReact"
   ]
+  /*"tslint.autoFixOnSave": true*/
 }

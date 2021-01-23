@@ -20,6 +20,7 @@ endif
 " Set Vim-Plug plugin manager
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
@@ -29,7 +30,7 @@ Plug 'preservim/nerdtree'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
-Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons' " Keep at the end
 call plug#end()
 
 "------------------------------------------------------------
@@ -143,10 +144,12 @@ augroup END
 
 " This option makes sure the local working directory is correctly set to the
 " opened buffer. See https://vi.stackexchange.com/questions/11903/working-directory-different-than-current-file-directory
-set viewoptions -=curdir
+" TODO: I don't remember why this option and the one below are necessary ->
+" test stuff
+"set viewoptions -=curdir
 
 " Automatically change the current directory, see https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
-autocmd BufEnter * silent! lcd %:p:h
+"autocmd BufEnter * silent! lcd %:p:h
 
 " Set time out length
 set timeout timeoutlen=400 ttimeout ttimeoutlen=50
@@ -230,7 +233,7 @@ set background=dark
 
 "##################################
 " COC.NVIM
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-prettier', 'coc-highlight', 'coc-emmet', 'coc-solargraph', 'coc-html', 'coc-css', 'coc-pairs', 'coc-eslint']
+let g:coc_global_extensions = ['coc-angular', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-highlight', 'coc-emmet', 'coc-solargraph', 'coc-html', 'coc-css', 'coc-pairs', 'coc-eslint']
 
 "##################################
 " FZF-VIM
