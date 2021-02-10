@@ -4,7 +4,9 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptReact"
+    "typescriptReact",
+    "css",
+    "scss",
+    "html"
   ]
-  /*"tslint.autoFixOnSave": true*/
 }
