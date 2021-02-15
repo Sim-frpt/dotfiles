@@ -7,3 +7,5 @@
 	ui = auto
 [status]
 	submoduleSummary = true
+[pull]
+	rebase = false
