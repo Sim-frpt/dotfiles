@@ -10,7 +10,9 @@ set nocompatible
 filetype plugin indent on
 
 " Enable syntax highlighting
-syntax on
+if !exists('g:syntax_on')
+  syntax enable
+endif
 
 "------------------------------------------------------------
 " PLUGIN MANAGEMENT
@@ -18,6 +20,7 @@ syntax on
 " Set Vim-Plug plugin manager
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
@@ -25,9 +28,9 @@ Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
+Plug 'ryanoasis/vim-devicons' " Keep at the end
 call plug#end()
 
 "------------------------------------------------------------
@@ -139,6 +142,15 @@ augroup AutoSaveFolds
   au BufWinEnter *.* silent loadview
 augroup END
 
+" This option makes sure the local working directory is correctly set to the
+" opened buffer. See https://vi.stackexchange.com/questions/11903/working-directory-different-than-current-file-directory
+" TODO: I don't remember why this option and the one below are necessary ->
+" test stuff
+"set viewoptions -=curdir
+
+" Automatically change the current directory, see https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
+"autocmd BufEnter * silent! lcd %:p:h
+
 " Set time out length
 set timeout timeoutlen=400 ttimeout ttimeoutlen=50
 
@@ -213,18 +225,18 @@ endif
 
 " Set colorscheme
 let g:one_allow_italics = 1
-set background=dark
 colorscheme one
+set background=dark
 
 "------------------------------------------------------------
 " PLUGIN OPTIONS
 
 "##################################
 " COC.NVIM
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-prettier', 'coc-highlight', 'coc-emmet', 'coc-solargraph', 'coc-html', 'coc-css', 'coc-pairs']
+let g:coc_global_extensions = ['coc-angular', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-highlight', 'coc-emmet', 'coc-solargraph', 'coc-html', 'coc-css', 'coc-pairs', 'coc-eslint']
 
 "##################################
-"FZF-VIM
+" FZF-VIM
 
 " Necessary for macos
 set runtimepath+=$HOMEBREW_PREFIX/opt/fzf
@@ -234,25 +246,8 @@ set runtimepath+=$HOMEBREW_PREFIX/opt/fzf
 " sick of looking
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
-
-" Customize fzf colors to match your color scheme
-" - fzf#wrap translates this to a set of `--color` options
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
 
 "##################################
 "LIGHTLINE
@@ -332,7 +327,7 @@ nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Remap NERDTree autofocus
-nmap <Leader>t :NERDTreeToggle<CR>
+nmap <Leader>t :NERDTreeToggle %<CR>
 
 " <Leader>lt makes you switch to the last tab that was opened
 nmap <Leader>lt :exe "tabn ".g:lasttab<CR>
@@ -377,3 +372,6 @@ fun! TrimWhitespace()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
 endfun
+
+" For scss syntax, see https://github.com/neoclide/coc-css
+autocmd FileType scss setl iskeyword+=@-@

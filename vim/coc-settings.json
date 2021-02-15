@@ -4,6 +4,9 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptReact"
+    "typescriptReact",
+    "css",
+    "scss",
+    "html"
   ]
 }
