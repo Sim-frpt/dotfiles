@@ -269,6 +269,9 @@ packadd! matchit
 " conceallevel removes brackets around icons (normally at 2)
 set conceallevel=3
 
+" Show hidden files
+let NERDTreeShowHidden=1
+
 " This function allows for different highlight color based on the file,
 " a bit hacky but it works. see https://github.com/preservim/nerdtree/issues/433
 " for the source. I replaced the guibg (previously #151515) by the guibg of my
@@ -326,7 +329,7 @@ nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Remap NERDTree autofocus
-nmap <Leader>t :NERDTreeToggle %<CR>
+nmap <Leader>t :NERDTreeToggle<CR>
 
 " <Leader>lt makes you switch to the last tab that was opened
 nmap <Leader>lt :exe "tabn ".g:lasttab<CR>
