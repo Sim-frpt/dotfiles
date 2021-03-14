@@ -10,9 +10,7 @@ set nocompatible
 filetype plugin indent on
 
 " Enable syntax highlighting
-if !exists('g:syntax_on')
-  syntax enable
-endif
+syntax enable
 
 "------------------------------------------------------------
 " PLUGIN MANAGEMENT
@@ -266,39 +264,17 @@ packadd! matchit
 "NERDTREE
 
 " NERDTree File highlighting (for vim-devicons)
+
 " conceallevel removes brackets around icons (normally at 2)
 set conceallevel=3
 
 " Show hidden files
 let NERDTreeShowHidden=1
 
-" This function allows for different highlight color based on the file,
-" a bit hacky but it works. see https://github.com/preservim/nerdtree/issues/433
-" for the source. I replaced the guibg (previously #151515) by the guibg of my
-" current theme. You can get it with this command: `hi Normal`
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-
-call NERDTreeHighlightFile('jade', 'green', 'none', '#98C379', '#282c34')
-call NERDTreeHighlightFile('ini', 'green', 'none', '#98C379', '#282c34')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#282c34')
-call NERDTreeHighlightFile('yml', 'green', 'none', '#98C379', '#282c34')
-call NERDTreeHighlightFile('config', 'green', 'none', '#98C379', '#282c34')
-call NERDTreeHighlightFile('conf', 'green', 'none', '#98C379', '#282c34')
-call NERDTreeHighlightFile('json', 'green', 'none', '#98C379', '#282c34')
-call NERDTreeHighlightFile('html', 'green', 'none', '#98C379', '#282c34')
-call NERDTreeHighlightFile('styl', 'cyan', 'none', '#56B6C2', '#282c34')
-call NERDTreeHighlightFile('css', 'cyan', 'none', '#56B6C2', '#282c34')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#282c34')
-call NERDTreeHighlightFile('js', 'Red', 'none', '#E5C07B', '#282c34')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#282c34')
-call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#ABB2BF', '#282c34')
-call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#ABB2BF', '#282c34')
-call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#ABB2BF', '#282c34')
-call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#ABB2BF', '#282c34')
-call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#ABB2BF', '#282c34')
+" get rid of [  ] around icons in NerdTree
+if exists("g:loaded_webdevicons")
+	call webdevicons#refresh()
+endif
 
 "------------------------------------------------------------
 " MAPPINGS
