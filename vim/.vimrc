@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch' : 'release'}
@@ -235,8 +236,6 @@ let g:coc_global_extensions = ['coc-angular', 'coc-json', 'coc-tsserver', 'coc-p
 
 "##################################
 " FZF-VIM
-
-set runtimepath+=$HOME/.fzf
 
 " Redeclare Rg command so that it uses a preview window
 " TODO there is still an issue with the highlighting color from Rg but I'm
