@@ -1,6 +1,6 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Material Theme High Contrast",
+    "workbench.colorTheme": "One Dark Pro",
     "editor.minimap.enabled": false,
     "editor.formatOnSave": true,
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
@@ -16,7 +16,9 @@
         "borderColor : {color}",
         "opacity: 0.3"
     ],
-    "editor.rulers": [80],
+    "editor.rulers": [
+        80
+    ],
     "explorer.confirmDragAndDrop": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.codeActionsOnSave": {
@@ -46,5 +48,6 @@
     "js/ts.implicitProjectConfig.experimentalDecorators": true,
     "angular.enable-experimental-ivy-prompt": false,
     "typescriptHero.imports.organizeOnSave": true,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "editor.linkedEditing": true
 }
