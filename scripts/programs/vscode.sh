@@ -33,3 +33,18 @@ install pixelbyte-studios.pixelbyte-love2d
 install ritwickdey.LiveServer
 install xabikos.JavaScriptSnippets
 install yzhang.markdown-all-in-one
+install zhuangtongfa.material-theme
+install sibiraj-s.vscode-scss-formatter
+
+
+# work stuff
+install alexiv.vscode-angular2-files
+install angular.ng-template
+install steoates.autoimport
+install nidu.copy-json-path
+install oouo-diogo-perdigao.docthis
+install editorconfig.editorconfig
+install eamodio.gitlens
+install nrwl.angular-console
+install ms-vscode.vscode-typescript-tslint-plugin
+install rbbit.typescript-hero

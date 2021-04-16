@@ -1,31 +1,50 @@
 {
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Material Theme High Contrast",
-  "editor.minimap.enabled": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "color-highlight.markerType": "",
-  "color-highlight.markRuler": false,
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
-  "git.detectSubmodulesLimit": 20,
-  "prettier.resolveGlobalModules": true,
-  "prettier.tabWidth": 4,
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "prettier.singleQuote": true,
-  "editor.formatOnPaste": true,
-  "window.zoomLevel": 1,
-  "breadcrumbs.enabled": true,
-  "bracket-pair-colorizer-2.scopeLineCSS": [
-    "borderStyle : solid",
-    "borderWidth : 1px",
-    "borderColor : {color}",
-    "opacity: 0.3"
-  ],
-  "editor.rulers": [80],
-  "explorer.confirmDragAndDrop": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "pixelbyte.love2d.path": "/usr/bin/love",
-  "editor.semanticTokenColorCustomizations": null,
-  "editor.codeActionsOnSave": null
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Material Theme High Contrast",
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "workbench.iconTheme": "eq-material-theme-icons-palenight",
+    "git.detectSubmodulesLimit": 20,
+    "prettier.resolveGlobalModules": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.formatOnPaste": true,
+    "breadcrumbs.enabled": true,
+    "bracket-pair-colorizer-2.scopeLineCSS": [
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}",
+        "opacity: 0.3"
+    ],
+    "editor.rulers": [80],
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.codeActionsOnSave": {
+        // "source.fixAll": true,
+        "source.fixAll.eslint": true,
+        // For tsling
+        "source.fixAll.tslint": true,
+        // For stylelint
+        "source.fixAll.stylelint": true
+    },
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "terminal.integrated.fontFamily": "Menlo for Powerline",
+    "typescript.tsserver.log": "verbose",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "js/ts.implicitProjectConfig.experimentalDecorators": true,
+    "angular.enable-experimental-ivy-prompt": false,
+    "typescriptHero.imports.organizeOnSave": true,
+    "window.zoomLevel": 1
 }
