@@ -117,8 +117,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 #####################################
 # RUBY CONFIG                       #
 #####################################
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
 
 #####################################
 # FZF CONFIG                        #
@@ -134,11 +134,11 @@ fi
 
 #####################################
 # BAT CONFIG
-export BAT_THEME="ansi-dark"
+export BAT_THEME="ansi"
 
 #####################################
 # ALIASES SOURCING
-[ -f $HOME/.aliases.zsh ] && source $HOME/.aliases.zsh
+[ -f $HOME/.aliases ] && source $HOME/.aliases
 
 #####################################
 # NVM CONFIG
@@ -156,3 +156,5 @@ fi
 # Source NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"

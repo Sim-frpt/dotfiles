@@ -9,5 +9,13 @@
     "key": "alt+l",
     "command": "-pixelbyte.love2d.run",
     "when": "editorTextFocus && editorLangId == 'lua'"
+  },
+  {
+    "key": "cmd+h",
+    "command": "workbench.action.decreaseViewSize"
+  },
+  {
+    "key": "cmd+y",
+    "command": "workbench.action.increaseViewSize"
   }
 ]

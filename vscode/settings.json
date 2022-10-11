@@ -1,53 +1,110 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "One Dark Pro",
-    "editor.minimap.enabled": false,
+  /* GENERAL */
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.revealIfOpen": true,
+  // "window.nativeTabs": true, // check later
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "git.detectSubmodulesLimit": 20,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "*.html.erb": "erb",
+    "*.pdf.erb": "erb",
+    "*.jb": "ruby"
+  },
+  "editor.formatOnPaste": true,
+  "breadcrumbs.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.rulers": [80],
+  "explorer.confirmDragAndDrop": false,
+  "editor.codeActionsOnSave": {
+    // "source.fixAll": true,
+    "source.fixAll.eslint": true
+    // For tslint
+    // "source.fixAll.tslint": true,
+    // For stylelint
+    // "source.fixAll.stylelint": true
+  },
+  "terminal.integrated.fontFamily": "Menlo for Powerline",
+  "editor.linkedEditing": true,
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+
+  /* THEME */
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "material-icon-theme",
+
+  /* FORMATTER */
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    // "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    // "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    // "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    // "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "misogi.ruby-rubocop"
+  },
+  "[erb]": {
     "editor.formatOnSave": true,
-    "workbench.iconTheme": "eq-material-theme-icons-palenight",
-    "git.detectSubmodulesLimit": 20,
-    "prettier.resolveGlobalModules": true,
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-    "editor.formatOnPaste": true,
-    "breadcrumbs.enabled": true,
-    "bracket-pair-colorizer-2.scopeLineCSS": [
-        "borderStyle : solid",
-        "borderWidth : 1px",
-        "borderColor : {color}",
-        "opacity: 0.3"
-    ],
-    "editor.rulers": [
-        80
-    ],
-    "explorer.confirmDragAndDrop": false,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "editor.codeActionsOnSave": {
-        // "source.fixAll": true,
-        "source.fixAll.eslint": true,
-        // For tsling
-        "source.fixAll.tslint": true,
-        // For stylelint
-        "source.fixAll.stylelint": true
-    },
-    // "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "terminal.integrated.fontFamily": "Menlo for Powerline",
-    "typescript.tsserver.log": "verbose",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "js/ts.implicitProjectConfig.experimentalDecorators": true,
-    "angular.enable-experimental-ivy-prompt": false,
-    "typescriptHero.imports.organizeOnSave": true,
-    "window.zoomLevel": 1,
-    "editor.linkedEditing": true
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify"
+  },
+
+  /* JS */
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  /* TYPESCRIPT */
+  "typescript.tsserver.log": "verbose",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "typescriptHero.imports.organizeOnSave": true,
+
+  "typescript.preferences.importModuleSpecifier": "relative",
+
+  /* ESLINT */
+  "eslint.options": {
+    "extensions": [".ts", ".html"]
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html"
+  ],
+  "eslint.alwaysShowStatus": true,
+
+  /* EMMET */
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+
+  /* RUBY */
+  "ruby.useBundler": true, //run non-lint commands with bundle exec
+  "ruby.useLanguageServer": true,
+  "ruby.intellisense": "rubyLocate",
+  "ruby.lint": {
+    "rubocop": {
+      "rubocop": true,
+      // "useBundler": true, // enable rubocop via bundler
+      "forceExclusion": true
+    }
+  },
+
+  /* SOLARGRAPH */
+  "solargraph.formatting": true,
+  "security.workspace.trust.untrustedFiles": "open",
+
+  /* ERB-BEAUTIFY */
+  "vscode-erb-beautify.keepBlankLines": 1,
+  "redhat.telemetry.enabled": false,
+  "window.zoomLevel": 1
 }
