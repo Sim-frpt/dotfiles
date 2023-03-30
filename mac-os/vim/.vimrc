@@ -19,8 +19,8 @@ syntax enable
 call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 "Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 Plug 'preservim/nerdcommenter'
@@ -287,9 +287,27 @@ set background=dark
 "##################################
 " FZF-VIM
 
-"" Necessary for macos
-"set runtimepath+=$HOMEBREW_PREFIX/opt/fzf
-""
+let g:terminal_ansi_colors = [
+            \ '#4e4e4e', '#d68787', '#5f865f', '#d8af5f',
+            \ '#85add4', '#d7afaf', '#87afaf', '#d0d0d0',
+            \ '#626262', '#d75f87', '#87af87', '#ffd787',
+            \ '#add4fb', '#ffafaf', '#87d7d7', '#e4e4e4'
+            \ ]
+
+let g:fzf_colors =
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
 "" Redeclare Rg command so that it uses a preview window
 "" TODO there is still an issue with the highlighting color from Rg but I'm
 "" sick of looking
@@ -317,9 +335,6 @@ packadd! matchit
 
 " NERDTree File highlighting (for vim-devicons)
 
-" conceallevel removes brackets around icons (normally at 2)
-set conceallevel=3
-
 " Show hidden files
 let NERDTreeShowHidden=1
 
@@ -327,6 +342,10 @@ let NERDTreeShowHidden=1
 if exists("g:loaded_webdevicons")
     call webdevicons#refresh()
 endif
+
+"##################################
+" NERDCOMMENTER
+ let g:NERDSpaceDelims = 1
 
 "------------------------------------------------------------
 " MAPPINGS
@@ -377,6 +396,10 @@ nnoremap <Leader>b :Buffer<Cr>
 
 " Call Rg faster with leader + g
 nnoremap <Leader>g :Rg<Cr>
+
+" Highlight current file in nerdtree
+nnoremap <C-f> :NERDTreeFind<CR>
+
 "------------------------------------------------------------
 " SOURCING SUB-CONFIGS
 

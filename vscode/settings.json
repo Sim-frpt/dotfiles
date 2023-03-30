@@ -9,11 +9,10 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.associations": {
-    "*.html.erb": "erb",
-    "*.pdf.erb": "erb",
+    "*.erb": "erb",
     "*.jb": "ruby"
   },
-  "editor.formatOnPaste": true,
+  // "editor.formatOnPaste": true,
   "breadcrumbs.enabled": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.rulers": [80],
@@ -53,8 +52,8 @@
     "editor.defaultFormatter": "misogi.ruby-rubocop"
   },
   "[erb]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "aliariff.vscode-erb-beautify"
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
+    "editor.formatOnSave": true
   },
 
   /* JS */
@@ -89,15 +88,15 @@
 
   /* RUBY */
   "ruby.useBundler": true, //run non-lint commands with bundle exec
-  "ruby.useLanguageServer": true,
+  // "ruby.useLanguageServer": true, /* Commented, Rubocop respects .rubocop.yml file. If active it still tries to lint schema.rb */
   "ruby.intellisense": "rubyLocate",
   "ruby.lint": {
     "rubocop": {
-      "rubocop": true,
       // "useBundler": true, // enable rubocop via bundler
       "forceExclusion": true
     }
   },
+  "ruby.rubocop.useBundler": true,
 
   /* SOLARGRAPH */
   "solargraph.formatting": true,
@@ -106,5 +105,11 @@
   /* ERB-BEAUTIFY */
   "vscode-erb-beautify.keepBlankLines": 1,
   "redhat.telemetry.enabled": false,
-  "window.zoomLevel": 1
+  "[gemfile]": {
+    "editor.defaultFormatter": "misogi.ruby-rubocop"
+  },
+  "window.zoomLevel": 1,
+
+  /* RAILS  */
+  "railsI18n.loadAllTranslations": true
 }
