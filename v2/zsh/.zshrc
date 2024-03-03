@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -99,6 +99,12 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES
 alias vim="nvim"
 alias v="nvim"
+alias vi="nvim"
 
 # Use vim key bindings
 bindkey -v
+
+# NVM config
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
