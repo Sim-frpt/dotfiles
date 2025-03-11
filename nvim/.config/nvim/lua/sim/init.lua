@@ -1,4 +1,4 @@
 require('sim.remaps')
-require('sim.plug')
+require('sim.lazy')
 
 

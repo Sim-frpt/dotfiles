@@ -28,3 +28,7 @@ vim.keymap.set("n", "<leader>y", "\"+Y")
 -- Use leader to delete into void register (won't replace what's in the yank register
 vim.keymap.set("v", "<leader>d", "\"_d")
 vim.keymap.set("n", "<leader>d", "\"_d")
+
+vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
+vim.keymap.set("n", "<space>x", ":.lua<CR>")
+vim.keymap.set("v", "<space>x", ":lua<CR>")

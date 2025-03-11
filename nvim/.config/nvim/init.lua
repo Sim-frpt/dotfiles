@@ -2,9 +2,6 @@ require("sim")
 
 -- VIM OPTIONS
 
--- Color scheme
-vim.cmd.colorscheme('kanagawa')
-
 vim.o.termguicolors = true
 
 -- Set line numbers and make them relative to cursor position
@@ -28,3 +25,6 @@ vim.o.scrolloff = 8
 vim.o.updatetime = 50
 
 vim.o.colorcolumn = "80"
+
+-- paste from clipboard buffer
+vim.o.clipboard = "unnamedplus"
