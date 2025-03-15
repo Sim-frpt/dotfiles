@@ -1,4 +1,4 @@
-require("sim")
+require("config")
 
 -- VIM OPTIONS
 
