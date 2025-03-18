@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias v="nvim"
 alias vi="nvim"
-alias nvimconf="nvim ~/.config/nvim/"
+alias vconf="nvim ~/.config/nvim/"
 
 # Use vim key bindings
 bindkey -v
