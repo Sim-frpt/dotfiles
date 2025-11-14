@@ -1,5 +1,3 @@
-require("config")
-
 -- VIM OPTIONS
 
 vim.o.termguicolors = true
@@ -16,8 +14,9 @@ vim.o.expandtab = true
 
 vim.o.smartindent = true
 
+-- TODO: not sure I need this, commenting for now
 -- Disable "visual" line wrapping
-vim.o.wrap = false
+--vim.o.wrap = false
 
 vim.o.scrolloff = 8
 
