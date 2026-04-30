@@ -1,0 +1,5 @@
+[user]
+	email = simon.fraipont@gmail.com
+	name = Simon Fraipont
+[core]
+	editor = nvim
