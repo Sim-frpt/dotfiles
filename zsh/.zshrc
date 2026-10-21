@@ -101,7 +101,7 @@ alias vim="nvim"
 alias v="nvim"
 alias vi="nvim"
 alias vconf="nvim ~/.config/nvim/"
-alias vpn="nordvpn"
+alias vpn="mullvad"
 
 # Use vim key bindings
 bindkey -v
