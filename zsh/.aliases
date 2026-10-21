@@ -1,0 +1,12 @@
+# ALIASES
+alias vim="nvim"
+alias v="nvim"
+alias vi="nvim"
+
+alias vim-conf="nvim ~/.config/nvim/"
+alias zsh-conf= "nvim ~/.zshrc"
+alias ghostty-conf="nvim ~/.config/ghostty/config.ghostty"
+
+if [[ "$(uname -s)" = "Linux" ]]; then 
+    alias vpn="mullvad"
+fi

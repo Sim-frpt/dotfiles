@@ -1,0 +1,13 @@
+{
+    "redhat.telemetry.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "chat.disableAIFeatures": true,
+    "explorer.confirmDelete": false,
+    "workbench": {
+        "colorTheme": "Tokyo Night",
+        "startupEditor": "none"
+    },
+    "editor": {
+        "formatOnSave": true
+    }
+}
